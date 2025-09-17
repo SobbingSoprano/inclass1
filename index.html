@@ -2,7 +2,9 @@
 <html>
 <head>
 <style>
+    /* Kents branch */
 /* Animated Background Gradient */
+
 body {
 font-family: Arial, sans-serif;
 background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -27,10 +29,13 @@ margin: 20px auto;
 width: 80%;
 font-size: 2.5rem;
 text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6;
-animation: flicker 2s infinite alternate;
+transition: animation 0.3s ease-in-out;
 border: 2px solid #fff;
 border-radius: 10px;
 background: rgba(0, 0, 0, 0.3);
+}
+h1:hover {
+    animation: flicker 4s infinite;
 }
 @keyframes flicker {
 0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
@@ -49,12 +54,22 @@ text-shadow: none;
 /* border removed as requested */
 text-align: center;
 width: 400px;
+border: 2px solid var(--table-color);
+height: 200px;
 }
+/* Matthew's Edit */
 table caption {
-color: white;
+color: blue;
 text-transform: uppercase;
 background-color: var(--table-color);
 padding: 10px;
+}
+.table-container{
+display: flex;
+justify-content: center;
+place-items: center;
+flex-direction: column;
+margin-top: 30px;
 }
 tr:nth-child(even) {
 background-color: var(--row-bg-color);
@@ -63,8 +78,9 @@ background-color: var(--row-bg-color);
 </head>
 <body>
 <h1>Yesterday - Best-Selling Video Games</h1>
+<div class="table-container">
 <table id="game-table">
-Best-Selling Video Games
+<caption>Best-Selling Video Games</caption>
 <tr>
 <th>Title</th>
 <th>Sales</th>
@@ -92,7 +108,8 @@ Best-Selling Video Games
 </tr>
 </table>
 <p>
-Source: https://en.wikipedia.org/wiki/List_of_best-selling_video_games
+Source: <a href = 'https://en.wikipedia.org/wiki/List_of_best-selling_video_games'>Wikipedia</a>
 </p>
+</div>
 </body>
 </html>
